@@ -1,2 +1,9 @@
 /mvnw text eol=lf
 *.cmd text eol=crlf
+
+# mvnw 스크립트를 텍스트 파일로 취급하고, 줄 끝 문자를 LF로 강제하며, 실행 가능 속성을 부여
+mvnw text eol=lf executable
+# mvnw: 이 규칙이 적용될 파일 이름 패턴
+# text: 이 파일을 텍스트 파일로 취급하도록 지시
+# eol=lf: 이 파일의 줄 끝 문자를 항상 Unix/Linux 스타일인 LF(\n)로 강제
+# executable: (핵심) Git에게 이 파일을 실행 가능한 파일로 취급하도록 명시적으로 지시하며, Git 버전 2.9.0 이상에서 지원
