@@ -75,9 +75,11 @@ public class FileUploadController {
 
             // 고유한 파일명 생성 (UUID 사용) - 원본 파일명에서 확장자를 가져오지 않음
             // 원본 파일명을 그대로 사용하거나 다른 방식 사용 가능
-            String uniqueFileName = UUID.randomUUID().toString();
+            // String uniqueFileName = UUID.randomUUID().toString();
             // 필요하다면 원본 파일명을 포함: uniqueFileName = UUID.randomUUID().toString() + "_" + originalFilename;
-            Path filePath = uploadPath.resolve(uniqueFileName); // 저장할 전체 경로
+            // Path filePath = uploadPath.resolve(uniqueFileName); // 저장할 전체 경로
+            Path filePath = uploadPath.resolve(originalFilename);
+
 
             log.info("파일 저장 시도: {}", filePath);
 
@@ -87,8 +89,10 @@ public class FileUploadController {
             log.info("파일 저장 성공: {}", filePath);
 
             // 3. 파일 저장 성공 메시지 설정
+            //redirectAttributes.addFlashAttribute("message",
+            //        "파일이 성공적으로 업로드되어 서버에 저장되었습니다: " + originalFilename + " (저장명: " + uniqueFileName + ")");
             redirectAttributes.addFlashAttribute("message",
-                    "파일이 성공적으로 업로드되어 서버에 저장되었습니다: " + originalFilename + " (저장명: " + uniqueFileName + ")");
+                    "파일이 성공적으로 업로드되어 서버에 저장되었습니다: " + originalFilename + " (저장명: " + originalFilename + ")");
 
             // --- 여기 이후에 저장된 파일 경로(filePath)를 가지고 다음 로직 진행 ---
 
