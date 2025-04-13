@@ -1,4 +1,4 @@
-/mvnw text eol=lf
+# cmd 스크립트: 텍스트, CRLF 줄 끝
 *.cmd text eol=crlf
 
 # mvnw 스크립트를 텍스트 파일로 취급하고, 줄 끝 문자를 LF로 강제하며, 실행 가능 속성을 부여
