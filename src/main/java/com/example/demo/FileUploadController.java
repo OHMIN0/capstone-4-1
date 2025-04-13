@@ -26,7 +26,7 @@ public class FileUploadController {
     // 실제 운영 환경에서는 application.properties 등 외부 설정 파일에서 관리하는 것이 좋습니다.
     private static final String UPLOAD_DIR = "uploaded-files/";
 
-
+    //
     /**
      * 루트 경로 ("/") 요청 시 home.html 페이지를 보여줍니다.
      * 업로드 디렉토리가 없으면 생성합니다.
